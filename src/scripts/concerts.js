@@ -7,7 +7,7 @@ const searchConcerts = (concertParam) => {
         .then(parsedEntries => {
             parsedEntries._embedded.events.slice(-4).forEach(entries => {
 
-                concertHTML += `<div class="individual-concert"><h4>${entries.name} at ${entries._embedded.venues[0].name}</h4><button id="save-button">Save</button></div>`
+                concertHTML += `<div class="individual-concert"><h3>${entries.name} at ${entries._embedded.venues[0].name}</h3><button id="save-button4">Save</button></div>`
             })
 
             document.querySelector("#resultsContainer").innerHTML += concertHTML;
@@ -17,53 +17,30 @@ const searchConcerts = (concertParam) => {
 
 
 document.querySelector("#searchConcertBtn").addEventListener("click", () => {
+    document.querySelector("#resultsContainer").innerHTML = "";
     const searchTerm = document.querySelector("#searchConcert").value;
     searchConcerts(searchTerm);
 });
 
 
-
-// document.querySelector("#resultsContainer").addEventListener("click", () => {
-//     const searchTerm = document.querySelector("#searchConcert").value;
-//     if (event.target.id === "save-button") {
-//         document.querySelector("#itineraryContainer").innerHTML = searchConcerts(searchTerm);
-//         document.querySelector("#resultsContainer").innerHTML = "";
-//     }
-// }
-// )
-
-// document.querySelector("#resultsContainer").addEventListener("click", () => {
-//     const concertSearch =  event.target.parentNode;
-//     if(event.target.id === "save-button"){
-//         console.log("You clicked on the button!");
-//         const concertCard = concertSearch.cloneNode(true);
-//         document.querySelector("#itineraryContainer").appendChild(concertCard);
-//         concertSearch.remove();
-//     } else if (event.target.id === "not-btn"){
-//         console.log("you clicked on the not button!")
-//         concertSearch.remove()
-//     }
-// })
-
 const removeButtonConcert = document.createElement('button');
-removeButton.setAttribute("id", "remove-button");
-removeButton.innerHTML = "Remove";
+removeButtonConcert.setAttribute("id", "remove-button4");
+removeButtonConcert.innerHTML = "Remove";
 document.querySelector("#resultsContainer").addEventListener("click", () => {
-    console.log("You clicked!");
-    const addToItinerary = event.target.parentNode;
-    if(event.target.id === "save-button") {
-        const itineraryPark = addToItinerary.cloneNode(true);
+    const addToItinerary4 = event.target.parentNode;
+    if (event.target.id === "save-button4") {
+        const itineraryConcert = addToItinerary4.cloneNode(true);
         document.querySelector("#resultsContainer").innerHTML = "";
-        document.querySelector("#itineraryContainer").innerHTML = "";
-        document.querySelector("#itineraryContainer").appendChild(itineraryPark);
-        document.querySelector("#save-button").remove();
-        document.querySelector(".individual-concert").appendChild(removeButton);
-    }   
+        document.querySelector("#concertItineraryContainer").innerHTML = "";
+        document.querySelector("#concertItineraryContainer").appendChild(itineraryConcert);
+        document.querySelector("#save-button4").remove();
+        document.querySelector(".individual-concert").appendChild(removeButtonConcert);
+    }
 }
 )
 
-document.querySelector("#itineraryContainer").addEventListener("click", () => {
-    if(event.target.id === "remove-button") {
-        document.querySelector("#itineraryContainer").innerHTML = "";
+document.querySelector("#concertItineraryContainer").addEventListener("click", () => {
+    if (event.target.id === "remove-button4") {
+        document.querySelector("#concertItineraryContainer").innerHTML = "";
     }
 })
