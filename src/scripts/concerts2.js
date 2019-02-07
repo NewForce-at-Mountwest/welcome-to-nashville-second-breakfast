@@ -1,4 +1,4 @@
-let dropdown = document.getElementById('searchConcert');
+let dropdown = document.getElementById('resultsContainer');
 dropdown.length = 0;
 
 let defaultOption = document.createElement('option');
