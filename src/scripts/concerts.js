@@ -45,7 +45,7 @@ document.querySelector("#searchConcertBtn").addEventListener("click", () => {
 //     }
 // })
 
-const removeButton = document.createElement('button');
+const removeButtonConcert = document.createElement('button');
 removeButton.setAttribute("id", "remove-button");
 removeButton.innerHTML = "Remove";
 document.querySelector("#resultsContainer").addEventListener("click", () => {
