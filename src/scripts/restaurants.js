@@ -1,4 +1,5 @@
 document.querySelector("#searchButton2").addEventListener("click", () => {
+document.querySelector("#resultsContainer").innerHTML = "";
   const food = document.querySelector("#searchInput2").value;
   findRestaurants(food);
 });
@@ -13,7 +14,7 @@ const findRestaurants = value => {
     .then(parsedRestaurant => {
         console.log(parsedRestaurant);
         for(let i=0; i <parsedRestaurant.restaurants.length; i++){
-        restaurantHTML += `<h3>${parsedRestaurant.restaurants[i].restaurant.name}</h3><p>${parsedRestaurant.restaurants[i].restaurant.url}</p>`
+        restaurantHTML += `<div class="individual-park2"><h3>${parsedRestaurant.restaurants[i].restaurant.name}</h3><p>${parsedRestaurant.restaurants[i].restaurant.url}</p><button id="save-button2">Save</button></div>`
         };
          document.querySelector("#resultsContainer").innerHTML += restaurantHTML;
       });
@@ -41,11 +42,10 @@ const findRestaurants = value => {
 //       });
 //     };
 
-const removeButton2 = document.createElement('button2');
-    removeButton2.setAttribute("class", "remove-button2");
-    removeButton2.innerHTML = "Remove2";
+const removeButton2 = document.createElement('button');
+    removeButton2.setAttribute("id", "remove-button2");
+    removeButton2.innerHTML = "Remove";
     document.querySelector("#resultsContainer").addEventListener("click", () => {
-        console.log("You clicked!");
         const addToItinerary2 = event.target.parentNode;
         if(event.target.id === "save-button2") {
             const itineraryPark2 = addToItinerary2.cloneNode(true);
@@ -59,7 +59,7 @@ const removeButton2 = document.createElement('button2');
     )
 
     document.querySelector("#parkItineraryContainer2").addEventListener("click", () => {
-        if(event.target.class === "remove-button2") {
+        if(event.target.id === "remove-button2") {
             document.querySelector("#parkItineraryContainer2").innerHTML = "";
         }
     })
