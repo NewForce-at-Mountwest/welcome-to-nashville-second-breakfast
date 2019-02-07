@@ -10,9 +10,10 @@ fetch(`https://www.eventbriteapi.com/v3/events/search/?q=nashville_${meetUpParam
     })
     .then(function(parsedMeetups) {
         console.log(parsedMeetups);
-        parsedMeetups.events.forEach(event =>{
+        parsedMeetups.events.slice(-4).forEach(event =>{
         document.querySelector("#resultsContainer").innerHTML += 
-        `<div><h3>${event.name.text}</h3><a href=${event.url}>${event.url}</a></div>`
+        `<div><h3>${event.name.text}</h3><button id=saveButton>Save</button><p>${event.description.text}</p>`
+        // <a href=${event.url}>${event.url}</a></div>`
         })
    
    
@@ -26,6 +27,14 @@ document.querySelector("#searchButton3").addEventListener("click", () => {
     console.log(meetUpParam);
     searchMeetups(`${meetUpParam}`);
 }) 
+
+// document.querySelector("#saveButton").addEventListener("click", () => {
+//     // get the user's input
+//     const meetUpParam = document.querySelector("#searchInput3").value;
+//     // log it to the console
+//     console.log(meetUpParam);
+//     searchMeetups(`${meetUpParam}`);
+// }) 
 
 //try to figure out the save part below here, eventually, maybe
 // document.querySelector("#resultsContainer").addEventListener("click", () => {
