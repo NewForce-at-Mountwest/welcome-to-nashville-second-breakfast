@@ -42,3 +42,6 @@ const searchParks = (taco) => {
             document.querySelector("#parkItineraryContainer").innerHTML = "";
         }
     })
+
+
+
