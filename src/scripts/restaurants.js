@@ -20,28 +20,6 @@ const findRestaurants = value => {
       });
     };
 
-
-// document.querySelector("#searchButton2").addEventListener("click", () => {
-//   const food = document.querySelector("#searchInput2").value;
-//   findRestaurants(food);
-// });
-
-// const findRestaurants = value => {
-//   let restaurantHTML = "";
-
-//   fetch(
-//     `https://developers.zomato.com/api/v2.1/search?entity_id=1138&q=${value}&count=4&sort=rating&order=desc&apikey=83b2f03cc93d8559e02be467e17c3440`
-//   )
-//     .then(restaurant => restaurant.json())
-//     .then(parsedRestaurant => {
-//         console.log(parsedRestaurant);
-//         for(let i=0; i <restaurants.length; i++){
-//         restaurantHTML += `<h3>${restaurants[i].restaurant.name}</h3><p>${restaurants[i].restaurant.url}</p>`
-//         };
-//          document.querySelector("#resultsContainer").innerHTML += restaurantHTML;
-//       });
-//     };
-
 const removeButton2 = document.createElement('button');
     removeButton2.setAttribute("id", "remove-button2");
     removeButton2.innerHTML = "Remove";

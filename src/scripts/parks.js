@@ -6,7 +6,7 @@ const searchParks = (taco) => {
         .then(parsedParks => {
             console.log(parsedParks);
             parsedParks.slice(-4).forEach(parkInfo => {
-                parkHTML += `<div class="individual-park"><h3>${parkInfo.park_name}</h3><p> ${parkInfo.mapped_location_address}</p><button id="save-button">Save</button></div>`
+                parkHTML += `<div class="individual-park"><h3>${parkInfo.park_name}</h3><p>${parkInfo.mapped_location_address}</p><button id="save-button">Save</button></div>`
             })
             document.querySelector("#resultsContainer").innerHTML += parkHTML;
 
