@@ -1,3 +1,19 @@
+V. 0.1.2.0 Alpha Release
+Nashville Itinerary Planner
+
+To download and use: Visit https://github.com/NewForce-at-Mountwest/welcome-to-nashville-second-breakfast. Use the git fork button and copy the link into a new directory in git bash. Change directories down into source with the "cd" command, then "cd" into lib and run "npm install" in the lib directory to install necessary dependencies. If using grunt, website may be launched in the lib folder by typing "grunt" in git bash. This will open a Google Chrome tab with the user interface.
+
+Instructions for the user: User enters the application at a home search screen, then enters search criteria for the event they would like to attend in the appropriate search bar (meet ups, concerts, restaurants, or parks). User clicks the corresponding search button to return four results that fit their criteria. If the "save" button is clicked, the appropriate search result will be saved to the itinerary section. Once another search is initiated, the search results section will refresh with the new information. User may select one event per category to add to their itinerary for a total of four events. If user attempts to add a second event in the same category, the first will be overwritten. Saved events may be removed from the itinerary with the "remove" button.
+
+When searching for parks, user must specify the type of park and use proper capitalization. I.E. "Dog Park" or "Baseball Field". Restaurants and meet ups may be searched by key word, and concerts may be searched by genre or artist.
+
+
+
+
+
+
+
+
 # Welcome to Nashville: Build an itinerary for a day trip to Music City
 
 The Nashville Convention & Visitors Corp has contracted you to build a dashboard for tourists. Approximately 15.2 million people visit Nashville every year. NCVC wants an itinerary builder that lets tourists search for things to do during their stay.
@@ -29,7 +45,7 @@ When the user searches for any of the four categories of things to do, the resul
 
 1. Only one itinerary needs to exist at a time. If a user selects an item to add to the itinerary, and an item already exists for that category in the itinerary, then you will need to update the itinerary with the new data
 1. All teammates must be using Grunt to run ESLint, http-server, and json-server during development
-1. Each teammate is responsible for one API module. If your group has three members, you are only responsible for three of the APIs. Pick one to skip. You should discuss as a team how you want to handle printing to the DOM. 
+1. Each teammate is responsible for one API module. If your group has three members, you are only responsible for three of the APIs. Pick one to skip. You should discuss as a team how you want to handle printing to the DOM.
 1. The README for your project should include *detailed* instructions on how another person can download and run the application. PRO TIP: Don't wait until the very end to create the README.
 1. DO NOT FORGET to use a `.gitignore` file to keep git from tracking your node_modules folder
 1. Styling is strictly _secondary_, beyond necessary display formatting. Do not add any additional visual enhancements until you have a fully functional app. The goal of every member of the team is to implement functionality with JavaScript
